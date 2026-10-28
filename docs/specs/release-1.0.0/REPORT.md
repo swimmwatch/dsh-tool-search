@@ -15,6 +15,10 @@
   Publishing is not configured yet; bootstrap publication remains pending.
 - The scoped package preserves the installed plugin row. Runtime compatibility
   remains Node 24 and DSH 0.2.1-rc.2.
+- The first main-branch run rejected a long squash description although the PR
+  title passed. [Fix #3](https://github.com/swimmwatch/dsh-tool-search/pull/3)
+  makes the post-merge gate validate the Git subject, matching the agreed PR
+  title policy. All hosted checks passed before this fix was merged.
 
 ## Browser and artwork
 
