@@ -1,8 +1,10 @@
-This local package reuses TypeScript discovery modules from the user's private
-tool-search-mcp project. The original project declares no public license.
-The maintained retrieval engine lives in src/core/.
-PROVENANCE.json records the source revision, original module hashes and local adaptations.
-No upstream source files were modified.
+DSH Tool Search
+Copyright 2026 Dmitry Vasiliev
 
-DeepSeek Harness packages are peer dependencies, not vendored copies.
+This plugin incorporates code from the author's tool-search-mcp project.
+That incorporated source and the plugin are licensed under Apache-2.0.
+PROVENANCE.json records the original revision, snapshot hashes and adaptations.
+The maintained retrieval engine lives in src/core/; the original checkout was
+not modified. Dependency packages retain their respective licenses.
+DeepSeek Harness packages are host-provided peer dependencies, not vendored copies.
 No MCP server transport, server entry point or JSON-RPC listener is included.

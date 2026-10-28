@@ -21,6 +21,7 @@ const result = await build({
   platform: 'browser',
   format: 'cjs',
   target: 'es2022',
+  loader: { '.css': 'text' },
   plugins: [clientSharedModules],
   metafile: true,
   write: false,
@@ -48,3 +49,4 @@ for (const output of Object.values(result.metafile.outputs)) {
 }
 await mkdir('dist', { recursive: true });
 await Promise.all(result.outputFiles.map((file) => writeFile(file.path, file.contents)));
+await writeFile('dist/src/client/settings.css', await readFile('src/client/settings.css'));

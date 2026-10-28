@@ -24,7 +24,7 @@ function ToolSearchSettingsEditor({
   }
 
   return (
-    <fieldset disabled={disabled} style={{ border: 0, padding: 0, margin: 0, minWidth: 0 }}>
+    <fieldset disabled={disabled} className="dsh-tool-search-settings">
       <SettingsForm
         labels={SETTINGS_FORM_LABELS}
         state={shell}
@@ -39,41 +39,41 @@ function ToolSearchSettingsEditor({
           edit={edit}
           credentials={credentials}
         />
-        {error && <p role="alert">{error}</p>}
-        <label htmlFor={FIELD_ID}>{SETTINGS_TEXT.title}</label>
-        <p id={`${FIELD_ID}-help`} style={{ margin: 0 }}>
-          {SETTINGS_TEXT.description}
-        </p>
-        <textarea
-          id={FIELD_ID}
-          aria-describedby={`${FIELD_ID}-help ${FIELD_ID}-required`}
-          value={text}
-          disabled={disabled}
-          onChange={(event) => edit({ text: event.target.value })}
-          rows={18}
-          spellCheck={false}
-          style={{
-            boxSizing: 'border-box',
-            width: '100%',
-            padding: 12,
-            borderRadius: 8,
-            fontFamily: 'monospace',
-            color: 'inherit',
-            background: 'var(--dsw-alias-bg-base, transparent)',
-            border: '1px solid var(--dsw-alias-border-l2, currentColor)',
-            resize: 'vertical',
-          }}
-        />
-        <small id={`${FIELD_ID}-required`}>{SETTINGS_TEXT.required}</small>
-        <small>{SETTINGS_TEXT.scope}</small>
-        <output>{SETTINGS_TEXT.count(parseToolSelection(text).length)}</output>
-        <Button
-          type="button"
-          disabled={disabled}
-          onClick={() => edit({ text: BASE_TOOLS.join('\n') })}
-        >
-          {SETTINGS_TEXT.defaults}
-        </Button>
+        {error && (
+          <p role="alert" className="error">
+            {error}
+          </p>
+        )}
+        <section className="section" aria-labelledby={`${FIELD_ID}-label`}>
+          <label id={`${FIELD_ID}-label`} className="tools-label" htmlFor={FIELD_ID}>
+            {SETTINGS_TEXT.title}
+          </label>
+          <p id={`${FIELD_ID}-help`} className="help">
+            {SETTINGS_TEXT.description}
+          </p>
+          <textarea
+            id={FIELD_ID}
+            aria-describedby={`${FIELD_ID}-help ${FIELD_ID}-required`}
+            value={text}
+            disabled={disabled}
+            onChange={(event) => edit({ text: event.target.value })}
+            rows={10}
+            spellCheck={false}
+            className="tool-list"
+          />
+          <small id={`${FIELD_ID}-required`}>{SETTINGS_TEXT.required}</small>
+          <small>{SETTINGS_TEXT.scope}</small>
+          <div className="actions">
+            <output className="help">{SETTINGS_TEXT.count(parseToolSelection(text).length)}</output>
+            <Button
+              type="button"
+              disabled={disabled}
+              onClick={() => edit({ text: BASE_TOOLS.join('\n') })}
+            >
+              {SETTINGS_TEXT.defaults}
+            </Button>
+          </div>
+        </section>
       </SettingsForm>
     </fieldset>
   );

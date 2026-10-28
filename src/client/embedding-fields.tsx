@@ -23,18 +23,18 @@ export function EmbeddingFields({
   credentials?: CredentialActions | undefined;
 }) {
   return (
-    <>
-      <Switch
-        label={SETTINGS_TEXT.embeddingEnabled}
-        checked={selection.embeddingEnabled}
-        disabled={disabled}
-        onChange={(checked) => edit({ embeddingEnabled: checked })}
-      />
+    <section className="section" aria-label={SETTINGS_TEXT.provider}>
+      <label className="toggle">
+        <Switch
+          label={SETTINGS_TEXT.embeddingEnabled}
+          checked={selection.embeddingEnabled}
+          disabled={disabled}
+          onChange={(checked) => edit({ embeddingEnabled: checked })}
+        />
+        {SETTINGS_TEXT.embeddingEnabled}
+      </label>
       <small>{SETTINGS_TEXT.disabledHelp}</small>
-      <fieldset
-        disabled={disabled || !selection.embeddingEnabled}
-        style={{ display: 'grid', gap: 12 }}
-      >
+      <fieldset disabled={disabled || !selection.embeddingEnabled} className="provider">
         <legend>{SETTINGS_TEXT.provider}</legend>
         <SegmentedControl
           id={PROVIDER_ID}
@@ -46,7 +46,7 @@ export function EmbeddingFields({
         />
         <div
           role="tabpanel"
-          style={{ display: 'grid', gap: 12 }}
+          className="fields"
           id={`${PROVIDER_ID}-${selection.embeddingProvider}-panel`}
           aria-labelledby={`${PROVIDER_ID}-${selection.embeddingProvider}`}
         >
@@ -55,7 +55,7 @@ export function EmbeddingFields({
               <label htmlFor="dsh-tool-search-embedding-model">
                 {SETTINGS_TEXT.embeddingTitle}
               </label>
-              <p>{SETTINGS_TEXT.embeddingDescription}</p>
+              <p className="help">{SETTINGS_TEXT.embeddingDescription}</p>
               <Input
                 id="dsh-tool-search-embedding-model"
                 type="text"
@@ -71,7 +71,7 @@ export function EmbeddingFields({
             </>
           ) : (
             <>
-              <label>
+              <label className="field">
                 {SETTINGS_TEXT.openaiModel}
                 <Input
                   type="text"
@@ -81,7 +81,7 @@ export function EmbeddingFields({
                   spellCheck={false}
                 />
               </label>
-              <label>
+              <label className="field">
                 {SETTINGS_TEXT.baseUrl}
                 <Input
                   type="url"
@@ -92,7 +92,7 @@ export function EmbeddingFields({
                 />
               </label>
               <small>{SETTINGS_TEXT.remoteDisclosure}</small>
-              <label>
+              <label className="field">
                 {SETTINGS_TEXT.keyRef}
                 <Input
                   type="text"
@@ -113,6 +113,6 @@ export function EmbeddingFields({
         </div>
         <small>{SETTINGS_TEXT.embeddingFallback}</small>
       </fieldset>
-    </>
+    </section>
   );
 }

@@ -14,6 +14,10 @@ export const OPENAI_DEFAULTS = Object.freeze({
 });
 export const CREDENTIAL_REF_PATTERN = /^[A-Z_]\w*$/i;
 export const OPENAI_MODEL_PATTERN = /^[\w.:/-]+$/;
+// Declarative wire validation: DSH's browser CSP forbids deserializing transform callbacks.
+// URL parsing and canonicalization still run before a provider uses the endpoint.
+export const OPENAI_BASE_URL_PATTERN =
+  /^(?:https:\/\/[^/?#@\s]+|http:\/\/(?:localhost|127\.0\.0\.1|\[::1\])(?::\d+)?)(?:\/[^?#\s]*)?$/i;
 export const LOOPBACK_HOSTS: ReadonlySet<string> = new Set(['localhost', '127.0.0.1', '[::1]']);
 export interface EmbeddingSettings {
   readonly embeddingEnabled: boolean;
