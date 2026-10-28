@@ -11,7 +11,7 @@ and a community-market submission. Node 24 and DSH 0.2.1-rc.2 stay supported.
 - [x] Improve repository discoverability with an accurate GitHub description, topics, npm keywords, README search terms and project links; verify the public metadata.
 - [x] Merge a separate CI/CD and publication-preparation PR after required checks.
 - [x] Verify branch protection with a failing-check and invalid-title PR.
-- [ ] Prepare rc.0; owner completes npm sign-in/2FA; publish the tested archive.
+- [x] Prepare rc.0; owner completes npm sign-in/2FA; publish the tested archive.
 - [ ] Configure OIDC and release rc.1 through CD.
 - [ ] Verify registry installation, browser behavior and available live providers.
 - [ ] Repair failed candidates through separate PRs and new RC versions.
