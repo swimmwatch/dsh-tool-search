@@ -1,0 +1,33 @@
+version: 2
+
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 3
+
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 3
+    versioning-strategy: lockfile-only
+    groups:
+      development:
+        dependency-type: development
+        update-types:
+          - minor
+          - patch
+    ignore:
+      # Host SDK and React updates require coordinated compatibility testing.
+      - dependency-name: '@deepseek-ai/*'
+      - dependency-name: react
+      - dependency-name: react-dom
+      - dependency-name: react-test-renderer
+      - dependency-name: '@types/react'
+      - dependency-name: '@types/react-dom'
+      - dependency-name: '@types/react-test-renderer'
+      - dependency-name: '*'
+        update-types:
+          - version-update:semver-major

@@ -1,0 +1,363 @@
+{
+  "sourceProject": "tool-search-mcp",
+  "sourceHead": "c4f0757c7cd93d3d3f73b631d3cf40a1e81e47ca",
+  "snapshotIncludesUncommittedWork": true,
+  "compiledModules": [
+    {
+      "path": "catalog/declaration-parser.js",
+      "sha256": "2116f46ec280ba113c424b7e2f26cc18dc53aa405992bc4189a372dfa24be7b0"
+    },
+    {
+      "path": "catalog/risk-policy.js",
+      "sha256": "58e92d56566f4c2b8b3525ce3381edabae816ce3dec2fb3929495d5389dd96a6"
+    },
+    {
+      "path": "catalog/tool-catalog.js",
+      "sha256": "412fe666c2ac8e24e4cb7b80b9090f1f9f507b813e80c7dbb6e27bf4d853800b"
+    },
+    {
+      "path": "embeddings/definition-vector-cache.js",
+      "sha256": "e95851c8da05bd3c21ca465c4879ee7c32610ac151a23ee11c27155578ea4e0d"
+    },
+    {
+      "path": "embeddings/ollama-embedding-provider.js",
+      "sha256": "5844dfd34ece714ea1941af9898a35972c5378fd47bf9220c0d86a7b1d4e2b62"
+    },
+    {
+      "path": "embeddings/vector.js",
+      "sha256": "1de9c7269dcee87bbe75c2f338f8540e1c4745004907495f57ecdd115abf04ab"
+    },
+    {
+      "path": "mcp/protocol.js",
+      "sha256": "70959d41bf3a313a7eab7a9bbb4266d812c555119266e86016788a09dee33503"
+    },
+    {
+      "path": "mcp/safe-diagnostic-logger.js",
+      "sha256": "4400b984aaca868eede00ae381f5818394d4b8126c6c5afd37fb277a7a218298"
+    },
+    {
+      "path": "mcp/tool-call-response.js",
+      "sha256": "0946af666335306e74f4605cb63b90f73b317fc7c569def617d3ce8af215544a"
+    },
+    {
+      "path": "mcp/tool-search-controller.js",
+      "sha256": "6a6c8ed97c25e167d4484b33be9cdf6ac5c2c8808b2e594d4e7581494d9ae7ba"
+    },
+    {
+      "path": "resolution/tool-candidate-selector.js",
+      "sha256": "1e03adad828d430459af2cea2585f25c46d329902171b7e41227716d21b4f401"
+    },
+    {
+      "path": "resolution/tool-resolution-service.js",
+      "sha256": "b4bf915fb904c1bb09c289d2a16be521f82c0d1f25049f831816e73d7787798c"
+    },
+    {
+      "path": "retrieval/bm25-index.js",
+      "sha256": "31753f6cf2a78f1b2bad30981f909cdd35252c2a13d5f32dafc14cc1d08991c8"
+    },
+    {
+      "path": "retrieval/confidence-policy.js",
+      "sha256": "59a923d5e6d8e9976010a8fdec8918226af5a92bb85f1b94dc97fe984268a60f"
+    },
+    {
+      "path": "retrieval/contracts.js",
+      "sha256": "7b73670647f67f96565ba6d7b2f17dc91d0a09d0a66c86a98eaa1a8b2f0f1493"
+    },
+    {
+      "path": "retrieval/hybrid-ranker.js",
+      "sha256": "d5c76479ba1c5dd4a4c473c9a0cd7acc5433c72a9354ba493cedd0eb8e238456"
+    },
+    {
+      "path": "retrieval/query-intent.js",
+      "sha256": "36a72d3e3c0f6514beda97b2443e28f98c365dddf65923b3d583523878229b15"
+    },
+    {
+      "path": "retrieval/ranking-policy.js",
+      "sha256": "71c4535cfc9a12a93e6f9c512620a5bca9e297b52528e8d32dde9b632dacb60b"
+    },
+    {
+      "path": "retrieval/structured-candidate-reranker.js",
+      "sha256": "6cba9c60b298b7a5fd724795aa6333fa39f6691c6e9064a3d2ab8bca4c5e13be"
+    },
+    {
+      "path": "retrieval/text-normalization.js",
+      "sha256": "dfde003418711aa102271831c5f45a6ed9a261041abbc1f98d24468be85335ee"
+    },
+    {
+      "path": "retrieval/tool-document-factory.js",
+      "sha256": "981eb17a7098f2954046bccac5d18ffd2fdd4c9252b69a9f2dbaeec1fc8004f6"
+    },
+    {
+      "path": "retrieval/tool-search-service.js",
+      "sha256": "3c8772b61100068f1c863848e49184bef262843fe9471e4e9e385ab61fe2f093"
+    },
+    {
+      "path": "sessions/catalog-registry.js",
+      "sha256": "d50c9d29048e861e226dddf6dec1a44a9d45aa17272704525bec2ad54b9398d3"
+    },
+    {
+      "path": "sessions/expiring-lru-store.js",
+      "sha256": "11195f044674e873174bd1027bc1ce13b2e8b40947f683ce1e0fb23840119ae0"
+    },
+    {
+      "path": "sessions/search-receipt-registry.js",
+      "sha256": "0729532aaa0368d30bb1b889e8e94c1b219e366d1e2fed3c9c60dba43ad3fe72"
+    },
+    {
+      "path": "shared/errors.js",
+      "sha256": "411e018ec8377e9f9201fdf859d0a7b8bcad833f6e99e2de66d0258d47184649"
+    },
+    {
+      "path": "shared/types.js",
+      "sha256": "bfa99a5fb3290308671d50bbd8322f32bb2636d0d5d861d36a43a5d5b67c74c0"
+    }
+  ],
+  "typescriptModules": [
+    {
+      "path": "catalog/declaration-parser.ts",
+      "sourceSha256": "f1b2c0f13c1b3f6055ab85c031141ebb1aa834de96b926787c89c3de2117bdea"
+    },
+    {
+      "path": "catalog/risk-policy.ts",
+      "sourceSha256": "82dd6a85f80e1e7b5e7a538937e65b4c71ee4143ff5ed459eb5b9c295be52902"
+    },
+    {
+      "path": "catalog/tool-catalog.ts",
+      "sourceSha256": "c40e46a59c15a6eaca0a6054dac1250c994ef6df16a29569e45b4af6fd1b666e"
+    },
+    {
+      "path": "embeddings/definition-vector-cache.ts",
+      "sourceSha256": "7b56223370bb64a0ad8ad7c93b15e8ed0c7c0bacf25c10275d0e59b6ab24ceed"
+    },
+    {
+      "path": "embeddings/ollama-embedding-provider.ts",
+      "sourceSha256": "b39eb9d5bbe61f2974b43c8b5e66c11bc6ed5b206a1cff3f6744e88d5cf4db19"
+    },
+    {
+      "path": "embeddings/vector.ts",
+      "sourceSha256": "a256f848be234b33583b676bbfa8aa7230a6f8dd19b47abbf52f35b974c1a0e2"
+    },
+    {
+      "path": "mcp/protocol.ts",
+      "sourceSha256": "c230247743faca3aacc934611f74ac277c973f05d5678b143d96c80d1a62d142"
+    },
+    {
+      "path": "mcp/safe-diagnostic-logger.ts",
+      "sourceSha256": "4da5be2dbf4fe9dcab4a15efe91f057e466770c6c30402bae7e03887bbc886c5"
+    },
+    {
+      "path": "mcp/tool-call-response.ts",
+      "sourceSha256": "e0b7edf93bd04506c475a9f8356e31086ad35b4265085b6d1a3ed7cee5592a25"
+    },
+    {
+      "path": "mcp/tool-search-controller.ts",
+      "sourceSha256": "0453d42b64bc4fbe4a737c8b748713201df432e7d26ca2ba0ac8ab1358fa6e50"
+    },
+    {
+      "path": "resolution/tool-candidate-selector.ts",
+      "sourceSha256": "0c10aa801cecd8d42bbf6380dff0eaa5a4bc046f9173d532491815f199da2126"
+    },
+    {
+      "path": "resolution/tool-resolution-service.ts",
+      "sourceSha256": "81c8400e73e9e7df718c44e90bb2bf1d7716b6b512ef8b56a4b91b3b7b021581"
+    },
+    {
+      "path": "retrieval/bm25-index.ts",
+      "sourceSha256": "293d760110ae5c731ac3158ed5e608fce4938b2830211a561437eff3107e85fc"
+    },
+    {
+      "path": "retrieval/confidence-policy.ts",
+      "sourceSha256": "aa248e1e04f7067e1c854134f523ff10b4c2b69bc966055d97905945b1d33ba1"
+    },
+    {
+      "path": "retrieval/contracts.ts",
+      "sourceSha256": "23f4cf58a6a5a11c6d7d8ad58bd9d17f4199a73ef32d512b13dd35ecb4468c2b"
+    },
+    {
+      "path": "retrieval/hybrid-ranker.ts",
+      "sourceSha256": "ba0527fc4e201a85ad54ea7da97f74383c502c2f93faa1a7beaed62c672ed36b"
+    },
+    {
+      "path": "retrieval/query-intent.ts",
+      "sourceSha256": "2d2ecb97be985e3235c7f55f3b8d3569bc2ee3d5e635ea723dff4c0d5823cfb8"
+    },
+    {
+      "path": "retrieval/ranking-policy.ts",
+      "sourceSha256": "28b4e24c86c0f37fd912b116edbbe3224cc1cfaa965fbdde97db065e61e70f7a"
+    },
+    {
+      "path": "retrieval/structured-candidate-reranker.ts",
+      "sourceSha256": "cffb9b644db00efdb330bc38f6905c2808716ace00bb4ebc3abb2e55390b31eb"
+    },
+    {
+      "path": "retrieval/text-normalization.ts",
+      "sourceSha256": "86ad0e3a9fe405851f26cedfe55b0097817c2419f0cd365fd3f6e3c3039516fb"
+    },
+    {
+      "path": "retrieval/tool-document-factory.ts",
+      "sourceSha256": "fa25597b8d8051dccb70ea200dcf67f78338a9f8765ecdfbf851849020a00147"
+    },
+    {
+      "path": "retrieval/tool-search-service.ts",
+      "sourceSha256": "e64e69345ecce9ff0b0ea4151dd0306da92dd97e6eacd95554269768117d3b5c"
+    },
+    {
+      "path": "sessions/catalog-registry.ts",
+      "sourceSha256": "df2d016f53392a6a997941f34bdc3214bbddae8d505a221e16bc0d7a222a4927"
+    },
+    {
+      "path": "sessions/expiring-lru-store.ts",
+      "sourceSha256": "c85efacdbd262a380fe8eb87ccbf4470b9eca1ddecd1840e4b1b81f306d5516f"
+    },
+    {
+      "path": "sessions/search-receipt-registry.ts",
+      "sourceSha256": "7c5d5c1d16bdd111318698adaec6f4785f402c1bd1a3a9e061f6dbc0ae2e8095"
+    },
+    {
+      "path": "shared/errors.ts",
+      "sourceSha256": "1ab448bb4d1aeab70d8f224d9ab1f7eea4cb147b35e643990feba9503173e062"
+    },
+    {
+      "path": "shared/types.ts",
+      "sourceSha256": "9a038e0eebc4e6d68ebb5f6325916d99895e686c112e2fcb2cb6c7ca77a47cfc"
+    }
+  ],
+  "adaptations": [
+    "Restored the corresponding original TypeScript sources instead of maintaining compiled JavaScript.",
+    "Applied project formatting and import sorting.",
+    "Shared query length and search-mode constants; removed unused MCP-server exports.",
+    "Retained readonly array types after Array.isArray checks.",
+    "Removed equivalent duplicate case-insensitive character ranges and impossible zero-length wildcard branches.",
+    "Resolve original MCP identities through the pinned DSH public-name mapping, and reject identifier fragments as exact callable references.",
+    "Extracted into a standalone project; machine-specific source locations are omitted from the source candidate.",
+    "Fixed review regressions by preserving provider-aware exact matching while excluding foreign identifiers, and validating admissible MCP server-name delimiter boundaries.",
+    "Moved the maintained retrieval engine from vendor/core to src/core as product source; original module paths and hashes remain relative to the core root.",
+    "Prioritize unambiguous positive registered-name references before BM25 truncation, including embedding-outage fallback; retain pattern and successful hybrid ranking.",
+    "Expose the existing Ollama model-name validation pattern for shared settings validation; retain the pinned local endpoint and opt-out of remote embeddings.",
+    "Added provider-neutral embedding operations, native OpenAI-compatible and Ollama clients, provider-scoped caches and an explicit local-only disabled mode.",
+    "Propagate per-operation cancellation through native discovery, the retrieval controller and embedding HTTP requests; preserve independent callers and treat abort separately from provider failure."
+  ],
+  "currentModules": [
+    {
+      "path": "catalog/declaration-parser.ts",
+      "sha256": "881bf3e908a5c9c51f8209f1753fa9727585aa381f80531b43d2f3856e1a69ee"
+    },
+    {
+      "path": "catalog/risk-policy.ts",
+      "sha256": "10260a3bb0d39b259e27c5ee7b3c8375654a2015c38c1f372906ecc4dc53d7cf"
+    },
+    {
+      "path": "catalog/tool-catalog.ts",
+      "sha256": "c24c8805415888c9175918dc39ea965f61edcabcc7cf536a30da93fb84d028a5"
+    },
+    {
+      "path": "embeddings/definition-vector-cache.ts",
+      "sha256": "3e276a9dc6169459551086be10172e439510433c213262efc73a5eb0e23368ef"
+    },
+    {
+      "path": "embeddings/ollama-embedding-provider.ts",
+      "sha256": "d0566f449edab75154d7696514afb2b5e64ca00f5d8c5654cea8e65a4fca64d2"
+    },
+    {
+      "path": "embeddings/openai-embedding-provider.ts",
+      "sha256": "4c44a3157e7cbe4ac65670043c3b685b4fa7d3e48f1db90b6b87e792986e8150"
+    },
+    {
+      "path": "embeddings/provider.ts",
+      "sha256": "33b33e8ac4def56fc67d6a67f8400256e44645c30024d4a69af908a36940aede"
+    },
+    {
+      "path": "embeddings/vector.ts",
+      "sha256": "7c899a49b99b72fcd3fc13a9042c2598915b31d87c9e9d70940e7b14fe211334"
+    },
+    {
+      "path": "mcp/protocol.ts",
+      "sha256": "2d212d57509a04171bc29c158a885bceada80321c3d368dad94953709a663a5d"
+    },
+    {
+      "path": "mcp/safe-diagnostic-logger.ts",
+      "sha256": "78a7d9d47a39fc76fc8659a6c4e0fa8660ef231feca877f26c2586ccd294e876"
+    },
+    {
+      "path": "mcp/tool-call-response.ts",
+      "sha256": "406252118eaa04dbec117f0255bb3a0c6b77667535ea43d40b4c515b0fdf4d19"
+    },
+    {
+      "path": "mcp/tool-search-controller.ts",
+      "sha256": "332a060158c85c7c4a314c62228dd9e9bfc33d39cd713b572e94d9b56b32139c"
+    },
+    {
+      "path": "resolution/tool-candidate-selector.ts",
+      "sha256": "feafc91544c593f19f44867bd98dadc2c09300e23a76aeae7cad17c46d149c61"
+    },
+    {
+      "path": "resolution/tool-resolution-service.ts",
+      "sha256": "3b63507471d654acb388b519f4a6e82b339b21632342efd541d03e33201985fe"
+    },
+    {
+      "path": "retrieval/bm25-index.ts",
+      "sha256": "9ce39b25f213e7e3ba1abc236502a984af017cfd2bc653911a2ba736ea150331"
+    },
+    {
+      "path": "retrieval/confidence-policy.ts",
+      "sha256": "fb3f6db4ffa7600c460c36c8f1955fa86f0f55e6d20914ba2f48afbd72560abf"
+    },
+    {
+      "path": "retrieval/contracts.ts",
+      "sha256": "7dc56f0db762bc053c38ab58ac37e458e4d518646fca857cfe3bafad05df881d"
+    },
+    {
+      "path": "retrieval/explicit-tool-reference.ts",
+      "sha256": "a56cac248ceb68ce327728af082b26097b901fd7170d4a3ac5fd93ca9e30a80a"
+    },
+    {
+      "path": "retrieval/hybrid-ranker.ts",
+      "sha256": "da67274c7019b78eb85cc42e6a22641c1d9e2e72a5875600f4ed483a1c0b5edb"
+    },
+    {
+      "path": "retrieval/query-intent.ts",
+      "sha256": "c753df88f1861db489540ba64f5f751bbc78651f5f921bb5d8b0ddb5c13876a4"
+    },
+    {
+      "path": "retrieval/ranking-policy.ts",
+      "sha256": "1d95769e9127912a5e5074b70960bd5d049929a67f75a8abd6d7d9f8aa750899"
+    },
+    {
+      "path": "retrieval/structured-candidate-reranker.ts",
+      "sha256": "f959bb4a0a4abcaf172303b9de78aabff5f0222ad92ac2568055a5df6f511785"
+    },
+    {
+      "path": "retrieval/text-normalization.ts",
+      "sha256": "095637a6822fc2708a9269ba2799b2719e354bbe34c9d898a47ad54e63eba9b0"
+    },
+    {
+      "path": "retrieval/tool-document-factory.ts",
+      "sha256": "9b8650d82c76bc6d95434792b5d6e5259a33bff6e1796d88a0d6a5b76f5ea14a"
+    },
+    {
+      "path": "retrieval/tool-search-service.ts",
+      "sha256": "fad0ed90eda76107bce01fd7c1a46052d826d40ddd622b2697a6a5b74521b235"
+    },
+    {
+      "path": "sessions/catalog-registry.ts",
+      "sha256": "b71bf9d10a43798f18a8b556aca7da0b2762317100fdebf88cdc231a146c5469"
+    },
+    {
+      "path": "sessions/expiring-lru-store.ts",
+      "sha256": "41fcbb0b1a7fbeeb1a4b600fb2ec25cc3bb13a7bda7ce361c1ad105e080ebc97"
+    },
+    {
+      "path": "sessions/search-receipt-registry.ts",
+      "sha256": "34f670e37ab23491366d6b2866c7520087d55271c256d62cb8dc750a9901e348"
+    },
+    {
+      "path": "shared/errors.ts",
+      "sha256": "a141fc086d8f4e5030c86f217cbe767b828cf65866dcdee9e8f4161b713c90d4"
+    },
+    {
+      "path": "shared/types.ts",
+      "sha256": "6bd59324d81d204f8118e4b160e035db92082c3dd73071e391a203530498fdbe"
+    }
+  ],
+  "currentSourceRoot": "src/core"
+}

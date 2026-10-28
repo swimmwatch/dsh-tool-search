@@ -1,0 +1,63 @@
+name: Bug report
+description: Report installation, settings, schema loading, or lifecycle problems.
+title: '[Bug]: '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For suspected vulnerabilities, follow the security policy in `SECURITY.md`
+        and its private reporting instructions. Do not disclose security details here.
+        Never attach credentials, environment dumps, DSH profiles, private tool catalogs,
+        or session exports. Use public or synthetic examples and redact screenshots.
+        For incorrect search rankings, use the Search quality form instead.
+  - type: input
+    id: build
+    attributes:
+      label: Plugin version and build
+      description: Include the commit or package SHA-256; different local builds may share a version.
+      placeholder: '0.1.0; commit <hash> or archive SHA-256 <hash>'
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: DSH version, Node.js version, and OS. Add browser/version for UI problems.
+      placeholder: 'DSH 0.2.1-rc.2; Node.js 24.x; Ubuntu; browser if applicable'
+    validations:
+      required: true
+  - type: dropdown
+    id: preset
+    attributes:
+      label: DSH preset
+      options:
+        - Native
+        - PTC (run_code)
+        - Both
+        - Unknown or DSH cannot start
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Use public or synthetic inputs. For loading issues, identify built-in/plugin/MCP tools and the search, call, and unload sequence. Use invented agent labels for parent/subagent cases.
+      placeholder: |
+        1. Configure the relevant non-secret setting.
+        2. Perform these steps with a small synthetic example.
+        3. Observe the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+      description: Describe what should happen and what happens instead, including how often it occurs.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Optional safe evidence
+      description: Include only relevant error codes, sanitized stack excerpts, or public test results. Do not paste full provider responses, request headers, logs, or configuration files.
+      render: text

@@ -1,0 +1,30 @@
+name: Feature request
+description: Propose a focused improvement to discovery, configuration, or integration.
+title: '[Feature]: '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For suspected vulnerabilities, follow the security policy in `SECURITY.md`
+        and its private reporting instructions. Do not disclose security details here.
+        Describe the use case with public or synthetic examples. Do not include
+        credentials, private queries, tool catalogs, profiles, or session exports.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: Explain the task you cannot complete or the difficulty with current behavior. Mention relevant tool sources or Native/PTC behavior when applicable.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: Describe observable behavior and a small example of success. Keep the request focused; implementation details are optional.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives and constraints
+      description: Note existing settings or workarounds you tried, and relevant compatibility, privacy, provider, or performance constraints. Do not provide private endpoints or credentials.

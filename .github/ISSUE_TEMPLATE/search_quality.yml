@@ -1,0 +1,101 @@
+name: Search quality
+description: Report missing, incorrectly ranked, or unexpectedly degraded search results.
+title: '[Search]: '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For suspected vulnerabilities, follow the security policy in `SECURITY.md`
+        and its private reporting instructions. Do not disclose security details here.
+        Use an authored synthetic example, not a private query, catalog, session,
+        profile, or credential. Include only public or invented tool names and descriptions.
+        With embeddings disabled, hybrid intentionally uses BM25 with `degraded: false`.
+        A provider failure while embeddings are enabled can return `degraded: true`.
+  - type: textarea
+    id: environment
+    attributes:
+      label: Build and environment
+      description: Include the plugin version and commit or package SHA-256, DSH version, Node.js version, and OS. Local builds may share the same plugin version.
+      placeholder: |
+        Plugin version and commit/package SHA-256:
+        DSH version:
+        Node.js version and OS:
+    validations:
+      required: true
+  - type: dropdown
+    id: preset
+    attributes:
+      label: DSH preset
+      options:
+        - Native
+        - PTC (run_code)
+        - Both
+        - Not recorded
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Requested search mode
+      description: If mode was omitted, the request uses hybrid.
+      options:
+        - hybrid
+        - bm25
+        - pattern
+        - Not recorded
+    validations:
+      required: true
+  - type: input
+    id: limit
+    attributes:
+      label: Requested limit
+      description: Enter the actual value, 3 if omitted, or "not recorded" if unknown. A limit of 1 is especially useful for ranking regressions.
+      placeholder: '1'
+    validations:
+      required: true
+  - type: dropdown
+    id: embeddings
+    attributes:
+      label: Embedding configuration
+      options:
+        - Disabled
+        - Ollama
+        - OpenAI API
+        - Other OpenAI-compatible server
+        - Not recorded
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Embedding model, if enabled
+      description: Model name only. Do not provide keys, private server addresses, or configuration files.
+      placeholder: qwen3-embedding:4b
+  - type: dropdown
+    id: degraded
+    attributes:
+      label: Returned degraded flag
+      options:
+        - 'true'
+        - 'false'
+        - Not recorded or no result
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal synthetic reproduction
+      description: Give a synthetic query, relevant public/invented tool names and short authored descriptions, and reproduction steps. Identify built-in/plugin/MCP tools. For MCP name mapping, include the public or synthetic original and registered names.
+      placeholder: |
+        Query and call arguments:
+        Relevant synthetic tools and their sources:
+        Reproduction steps:
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: Expected and actual results
+      description: Give the expected tool, actual ordered names, and returned mode/reason if available. Explain why the expected tool fits. Do not attach a full catalog, response, or session trace.
+    validations:
+      required: true

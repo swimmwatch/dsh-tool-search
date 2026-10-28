@@ -1,0 +1,17 @@
+node_modules/
+dist/
+coverage/
+*.tgz
+
+benchmarks/results/
+
+.local/
+artifacts/
+.env
+.env.*
+!.env.example
+*.log
+*.tsbuildinfo
+.DS_Store
+.idea/
+.vscode/

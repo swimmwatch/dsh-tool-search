@@ -1,0 +1,25 @@
+name: Usage question
+description: Ask about installation, configuration, or documented plugin behavior.
+title: '[Question]: '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Check `README.md` and `SUPPORT.md` first. Use the bug or search-quality
+        form for reproducible defects.
+        For suspected vulnerabilities, follow the security policy in `SECURITY.md`
+        and its private reporting instructions. Do not disclose security details here.
+        Do not include keys, environment dumps, private queries or catalogs,
+        DSH profiles, or session exports.
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: Explain what you want to do and which documented behavior is unclear. Use public or synthetic examples.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Relevant context and what you tried
+      description: When relevant, include the plugin version and commit/package SHA-256, DSH/Node.js versions, Native/PTC preset, and non-secret provider/mode settings. Name the documentation or steps you already checked; do not paste a configuration file.

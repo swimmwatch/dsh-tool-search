@@ -1,0 +1,1822 @@
+{
+  "schemaVersion": 1,
+  "datasetDigest": "0f7fca1bfb5751672bd7c84b1c1d270700305c520300c418e71cf6ae9a21d88a",
+  "embeddingModel": "deterministic-semantic-v2",
+  "mode": "hybrid",
+  "provenance": {
+    "sourceArchiveSha256": "395b93b470a90fe83cf0a48f05d974b85d8be7b0f8d7ff0f9f252bdbf41c2b9e",
+    "productionSourceSha256": "35c10abcb6ebd5c3c87aa5e27a0b8524787c1bb4c11f5038764ff9d03348619a",
+    "benchmarkSourceSha256": "92dc0987913799e518c017588f927c716ba8eca3625e01a93aaa8bdc7e7cdb29"
+  },
+  "cases": [
+    {
+      "id": "exact.github.issue.by-number",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "exact.gmail.send",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "exact.dropbox.folder",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "exact.calendar.range",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "equivalent.any-browser-screenshot",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "equivalent.any-cloud-file-search",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "equivalent.any-task-create",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "equivalent.any-web-search",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "missing-provider.slack-search",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "missing-provider.slack-send",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "missing-provider.slack-send-ru",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "missing-provider.box-search",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "missing-provider.ollama-delete-model",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "missing-provider.home-assistant-change-thermostat",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "missing-capability.github-delete-release",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "missing-capability.github-merge-pr",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "missing-capability.drive-upload",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "ambiguous.github.handle-issue",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "ambiguous.messaging.do-it",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "ambiguous.storage.document",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "ambiguous.calendar.event",
+      "top1Correct": false,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": false,
+      "forbiddenTop1": true,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "underspecified.search",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "underspecified.open",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "underspecified.fetch-file",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "underspecified.message",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.exact.github-pr-number",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.exact.github-releases",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": false
+    },
+    {
+      "id": "extended.exact.github-release-tag",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.exact.gmail-message-id",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.exact.gmail-list",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.exact.dropbox-search",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.exact.drive-file-id",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.exact.browser-open",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.equivalent.screenshot-any",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.equivalent.task-create",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.unavailable.discord-search",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.unavailable.notion-search",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.unavailable.github-deploy",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.unavailable.github-package",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.underspecified.do-it",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.ambiguous.messages",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "action.github.list-not-search",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "action.github.search-not-list",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "action.github.comment-not-update",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "action.github.update-not-comment",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "action.slack.search-not-send",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "action.slack.send-not-search",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "provider.slack.search",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "provider.teams.search",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "provider.gmail.search",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "provider.drive.search",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "provider.dropbox.search",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "provider.chrome.screenshot",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.action.pr-list",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.action.pr-search",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.action.release-get",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.action.dropbox-list",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.action.drive-search",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.action.gmail-archive-one",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.action.gmail-archive-many",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.action.calendar-get",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.action.calendar-delete",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.action.browser-selector-click",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.action.browser-element-click",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.provider.slack-send",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.provider.teams-send",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.provider.gmail-send",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.provider.drive-list",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.provider.dropbox-get",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.provider.browser-screenshot",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.provider.chrome-screenshot",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.provider.playwright-screenshot",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "schema.github.issue-number",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": false
+    },
+    {
+      "id": "schema.github.query-string",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": false
+    },
+    {
+      "id": "schema.drive.file-id",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "schema.dropbox.path",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "schema.browser.selector",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "schema.browser.element-id",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "scope.gmail.one",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "scope.gmail.batch",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "scope.github.one-pr",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "scope.github.pr-list",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.schema.issue-number",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.schema.issue-query",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.schema.drive-file-id",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.schema.dropbox-path",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.schema.event-id",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.schema.time-range",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.scope.gmail-single",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.scope.gmail-batch",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.scope.github-one-pr",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.scope.github-many-prs",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.prerequisite.context7-resolve",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.prerequisite.context7-query",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.prerequisite.github-repository",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "multilingual.ru.github-search",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": false
+    },
+    {
+      "id": "multilingual.ru.gmail-send",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "multilingual.es.drive-search",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "multilingual.de.calendar-list",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "multilingual.fr.slack-search",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "multilingual.ja.browser-screenshot",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 0.3333333333333333,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "paraphrase.github-list",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": false
+    },
+    {
+      "id": "paraphrase.slack-search",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 0.5,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "paraphrase.drive-get",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "paraphrase.calendar-list",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 0.5,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "typo.github-search",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "typo.slack-message",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "typo.dropbox-file",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "typo.calendar-events",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "abbreviation.github-pr-get",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "abbreviation.github-pr-list",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "abbreviation.gmail-dm-search",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "abbreviation.calendar-event",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "noise.github-cross-repo-search",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "noise.dropbox-exact-path",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "noise.gmail-batch-at-end",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "conflict.description-search",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "conflict.description-list",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "description-noise.trace-id",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "description-noise.prefer-supported-v2",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "near-duplicate.directory-user",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "near-duplicate.profile",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "near-duplicate.user-events",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.multilingual.ru-github-pr",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 0.3333333333333333,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.multilingual.ru-slack-search",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.multilingual.ru-drive-file",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.multilingual.ru-calendar-list",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 0.5,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.multilingual.fr-dropbox-search",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.multilingual.es-gmail-send",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.paraphrase.github-issues",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.paraphrase.slack-find",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.paraphrase.drive-retrieve",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.paraphrase.calendar-window",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.paraphrase.browser-capture",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.paraphrase.github-release",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.typo.github-issues",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 0.5,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.typo.slack-message",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 0.3333333333333333,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.typo.dropbox-search",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.typo.gmail-send",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 0.5,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.abbreviation.gh-issues",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.abbreviation.gh-release",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.abbreviation.gcal-list",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.abbreviation.gmail-msg",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.noise.dropbox-path",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "policy.read-only-allows-read",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "policy.read-only-blocks-write",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": false,
+      "forbiddenAt5": false
+    },
+    {
+      "id": "policy.mutation-blocks-execution",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": false,
+      "forbiddenAt5": false
+    },
+    {
+      "id": "policy.execution-blocks-destructive",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": false,
+      "forbiddenAt5": false
+    },
+    {
+      "id": "extended.safety.negated-send",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.safety.negated-update",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.safety.read-package",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.injection.ignore-send",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.injection.ignore-delete",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.cloakbrowser.navigate-not-repl",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": false
+    },
+    {
+      "id": "runtime.headroom.statistics",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.image.generate-not-view",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": false
+    },
+    {
+      "id": "runtime.image.view-not-generate",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": false
+    },
+    {
+      "id": "runtime.context7.resolve-library",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.context7.query-docs",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.github.exact-head-workflow-runs",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.codegraph.callers",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.codegraph.explore-direct-name",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.headroom.stats-direct-name",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.node-repl.direct-name",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.node-repl.calculate-full-catalog",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.drive-wide-search-not-text-range",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.github-repository-pr-search",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": false
+    },
+    {
+      "id": "runtime.web-current-public-information",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": false
+    },
+    {
+      "id": "runtime.openai-docs-search-not-fetch",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.mcp-static-resources-list",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "runtime.browser-new-tab-not-repl",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": false
+    },
+    {
+      "id": "runtime.logfire-project-count-not-exceptions",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.logfire-live-expanded-read-only-count",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.logfire-live-russian-negative-tail",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.ticktick-russian-task-lists-not-countdowns",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.ticktick-live-expanded-read-only-count",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.codegraph-russian-call-path-not-node",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": false
+    },
+    {
+      "id": "runtime.codegraph-live-expanded-call-path",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.codegraph-source-complete-call-path",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.codegraph-live-russian-infinitive-call-path",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.logfire-live-english-accessible-project-count",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.codegraph-implicit-russian-symbol-call-path",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.browser-russian-tab-not-repl",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": false
+    },
+    {
+      "id": "runtime.local-image-russian-view-not-generate",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.local-image-live-detailed-path",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.github-abbreviated-repository-pr-search",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": false
+    },
+    {
+      "id": "runtime.github-live-terse-read-only-pr-search",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "runtime.github-live-expanded-read-only-pr-search",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": false
+    },
+    {
+      "id": "runtime.browser-live-russian-lifecycle",
+      "top1Correct": false,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": false
+    },
+    {
+      "id": "extended.runtime.logfire-projects",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.runtime.github-workflow-runs",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.runtime.codegraph-explore",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.runtime.codegraph-node",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.runtime.web-current",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "extended.runtime.local-image",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "extended.runtime.codegraph-callers",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "scale.security-exception-natural",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "scale.security-exception-paraphrase",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "scale.unavailable-satellite",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": null,
+      "forbiddenAt5": null
+    },
+    {
+      "id": "refresh.before-audit-tool",
+      "top1Correct": true,
+      "recallAt5": null,
+      "reciprocalRank": null,
+      "noMatchCorrect": true,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    },
+    {
+      "id": "refresh.after-audit-tool",
+      "top1Correct": true,
+      "recallAt5": true,
+      "reciprocalRank": 1,
+      "noMatchCorrect": null,
+      "forbiddenTop1": false,
+      "forbiddenAt5": true
+    }
+  ]
+}

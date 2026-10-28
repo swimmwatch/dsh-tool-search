@@ -1,0 +1,121 @@
+{
+  "sourceProject": "tool-search-mcp",
+  "sourceSnapshot": "Private development snapshot; original file hashes are retained below.",
+  "sourceFiles": [
+    {
+      "path": "benchmarks/retrieval/quality-benchmark.ts",
+      "sourceSha256": "83959b7996998aeb491a0250ac0b255d6ffbcea128d2626327734a68e2f2688f"
+    },
+    {
+      "path": "benchmarks/retrieval/metamorphic-benchmark.ts",
+      "sourceSha256": "7b6ca9d4caf0fe7337c6efb6ca4ade253f66bcdd81e0054231258ac7bccc1dc9"
+    },
+    {
+      "path": "benchmarks/retrieval/cases/quality-tool-names.ts",
+      "sourceSha256": "b298aa214965140be9042f57449230cb8a62dcbe3cb12ac3a3e6032cadc5d3bd"
+    },
+    {
+      "path": "benchmarks/retrieval/cases/quality-cases.ts",
+      "sourceSha256": "6f9a60ad1487357d64c2631247682c7085ba80a4dc8ecac79c4c1993c5dc07eb"
+    },
+    {
+      "path": "benchmarks/retrieval/cases/fixture-tool-builder.ts",
+      "sourceSha256": "4fd435310daf5a35d47e3b1b5e2670578d9939b72e4022d0ed9a504445b095f8"
+    },
+    {
+      "path": "benchmarks/retrieval/cases/quality-fixtures.ts",
+      "sourceSha256": "ee2e1b9e5d78b179858b60d746229d09aa59a2cc4f259d610498f7897bda5964"
+    },
+    {
+      "path": "benchmarks/retrieval/cases/case-builders.ts",
+      "sourceSha256": "f4e8109cd5019bce3daa9cae1c5c26cbe2863ff80b8ba475ed20a1852c8c0610"
+    },
+    {
+      "path": "benchmarks/retrieval/cases/fixtures/runtime-regressions-fixtures.ts",
+      "sourceSha256": "c676a1a7b1d70e1c689755f1a0e42638aaf80fa26732fca19c9e295b5dcc8be0"
+    },
+    {
+      "path": "benchmarks/retrieval/cases/fixtures/language-noise-fixtures.ts",
+      "sourceSha256": "8c50b45f770c139adfe8e2269ebe29ce4a299d4d6ad7833ce9d0ebc7e8b535ee"
+    },
+    {
+      "path": "benchmarks/retrieval/cases/fixtures/safety-policy-fixtures.ts",
+      "sourceSha256": "633219534eb45db24bbe2662cc19df6b5a5572a490bbef15eee729f5b072629c"
+    },
+    {
+      "path": "benchmarks/retrieval/cases/fixtures/capability-fixtures.ts",
+      "sourceSha256": "ed308a88b6e182094556d3955d45523433dd5a31ed7bf671de57632d2426a7d9"
+    },
+    {
+      "path": "benchmarks/retrieval/cases/fixtures/scale-lifecycle-fixtures.ts",
+      "sourceSha256": "e081e6916cd5ee96b6e0a50464dbb4f5eba7ad0dc17f50040c25a5b1d447e05a"
+    },
+    {
+      "path": "benchmarks/retrieval/cases/groups/schemas-scopes-cases.ts",
+      "sourceSha256": "844f8de5fe28885194f5d17ce5359483abdb3d07e454ccac752cd1cf02d9f641"
+    },
+    {
+      "path": "benchmarks/retrieval/cases/groups/runtime-regressions-cases.ts",
+      "sourceSha256": "f00f7ee7618b6e5f502aed2136cb6d5b1be3ffba88e0c9b9f5973a175ba56e77"
+    },
+    {
+      "path": "benchmarks/retrieval/cases/groups/scale-lifecycle-cases.ts",
+      "sourceSha256": "8c17c860205e941ac7105baee8aafb627944b9d693fa0fb1b65c33603e771579"
+    },
+    {
+      "path": "benchmarks/retrieval/cases/groups/safety-policy-cases.ts",
+      "sourceSha256": "b6df1837c21c1e2e17f7a2850981fe0d6d67f21d86e42a7f55af793f6e62acfe"
+    },
+    {
+      "path": "benchmarks/retrieval/cases/groups/provider-action-cases.ts",
+      "sourceSha256": "64f61cc878722a5d2d0fbf02c408105ab9b502b188b9d1cf205e515f8e69e394"
+    },
+    {
+      "path": "benchmarks/retrieval/cases/groups/capability-cases.ts",
+      "sourceSha256": "4b6683eae1d39faa0f064491661c3a936f37fa3bf9f083fa6846ee817a4fbeb4"
+    },
+    {
+      "path": "benchmarks/retrieval/cases/groups/language-noise-cases.ts",
+      "sourceSha256": "bba69455f3ed47e55d262b2b4a5379325164ec692c68fdebf9af00abb060ff66"
+    },
+    {
+      "path": "benchmarks/shared/quality-types.ts",
+      "sourceSha256": "20f18e9eb6c954bdc029a12db5bc63e663796a7fbed8772201f1e5380b471c9f"
+    },
+    {
+      "path": "benchmarks/shared/benchmark-policy.ts",
+      "sourceSha256": "442739588f3d9a31dcf280b44e09652cae6b263a1cbe9faad10e1628dc2c2495"
+    },
+    {
+      "path": "benchmarks/shared/deterministic-embedding-adapter.ts",
+      "sourceSha256": "4a82cf4210a2dc260ad41b5cb8c3556ea635385933543f269eaf43d1ef35d501"
+    },
+    {
+      "path": "benchmarks/performance/scale-benchmark.ts",
+      "sourceSha256": "0c2328992f55533c613c8c52251e1c4244a234b6ed65159b48e1fb82fb1a6307"
+    },
+    {
+      "path": "benchmarks/baselines/deterministic-quality-v2.json",
+      "sourceSha256": "25f659d9d337f5bd31ed1e867a44cb3fa4c64ddfb2d4dfed1032cec1ade930ff"
+    }
+  ],
+  "adaptations": [
+    "Public native DSH benchmark replaces obsolete MCP transport and legacy adapter comparisons.",
+    "Core benchmark imports target the bundled TypeScript core.",
+    "Fixture data and deterministic stability thresholds are retained.",
+    "Extracted into a standalone project; machine-specific source locations are omitted from the source candidate.",
+    "One workstation-specific fixture image path was replaced with a neutral /workspace path for repository extraction. The new public baseline has a new dataset digest but unchanged metric thresholds; original baseline hashes and dataset identities are preserved as provenance.",
+    "Archived obsolete intermediate baseline files outside the maintained project; their source names and hashes remain historical provenance, not runtime file references.",
+    "Added a separate case-level deterministic quality floor captured from the saved pre-expansion source snapshot; preserved the original corpus, aggregate baseline and thresholds.",
+    "Retained the original 500 metamorphic transformations and added full-corpus catalog-reorder checks with isolated temporary caches and independent outcome guards.",
+    "Added strict retrieval and Native/PTC state-transition/provider contract suites, suite-specific report validation, and benchmark-oracle mutation tests.",
+    "Separated construction, first-query and warm scale measurements while preserving the original executable 2000 ms first-query gate."
+  ],
+  "publicDataset": {
+    "previousDigest": "e82be89dd248731cfe5b945dbda35f2e674582adccad96dd3fe394a923842b0d",
+    "datasetDigest": "0f7fca1bfb5751672bd7c84b1c1d270700305c520300c418e71cf6ae9a21d88a",
+    "cases": 201,
+    "fixtures": 17,
+    "baseline": "baselines/deterministic-dsh-public-v1.json"
+  }
+}

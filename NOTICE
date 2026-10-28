@@ -1,0 +1,8 @@
+This local package reuses TypeScript discovery modules from the user's private
+tool-search-mcp project. The original project declares no public license.
+The maintained retrieval engine lives in src/core/.
+PROVENANCE.json records the source revision, original module hashes and local adaptations.
+No upstream source files were modified.
+
+DeepSeek Harness packages are peer dependencies, not vendored copies.
+No MCP server transport, server entry point or JSON-RPC listener is included.

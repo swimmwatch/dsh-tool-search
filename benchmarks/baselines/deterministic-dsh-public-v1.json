@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 2,
+  "datasetDigest": "0f7fca1bfb5751672bd7c84b1c1d270700305c520300c418e71cf6ae9a21d88a",
+  "embeddingModel": "deterministic-semantic-v2",
+  "cases": 201,
+  "top1Accuracy": 0.8408,
+  "recallAt5": 1,
+  "meanReciprocalRank": 0.974,
+  "noMatchAccuracy": 0.9643,
+  "forbiddenToolRate": 0.0068,
+  "sourceBaseline": "deterministic-dsh-v1.json",
+  "addedSourceCase": "runtime.node-repl.calculate-full-catalog",
+  "originalSnapshotMetricsVerified": true,
+  "datasetTransformation": "One workstation-specific fixture path replaced with /workspace/sample-project/assets/tray-icon.png. Original metrics and thresholds are retained."
+}
