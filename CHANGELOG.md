@@ -6,6 +6,12 @@ and releases follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.0.0-rc.2] - 2026-10-28
+
+### Fixed
+
+- Preserve the existing npm `latest` tag when publishing candidates, including the registry-assigned bootstrap tag; reject unexpected promotion or channel changes.
+
 ## [1.0.0-rc.1] - 2026-10-28
 
 ### Fixed
@@ -42,6 +48,7 @@ and releases follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Pin the project dependency tree to Zod 4.6.6 to remove the vulnerable SDK
   dependency copies. This does not patch a separately installed DSH host.
 
-[Unreleased]: https://github.com/swimmwatch/dsh-tool-search/compare/v1.0.0-rc.1...HEAD
+[Unreleased]: https://github.com/swimmwatch/dsh-tool-search/compare/v1.0.0-rc.2...HEAD
+[1.0.0-rc.2]: https://github.com/swimmwatch/dsh-tool-search/compare/v1.0.0-rc.0...v1.0.0-rc.2
 [1.0.0-rc.1]: https://github.com/swimmwatch/dsh-tool-search/compare/v1.0.0-rc.0...v1.0.0-rc.1
 [1.0.0-rc.0]: https://github.com/swimmwatch/dsh-tool-search/releases/tag/v1.0.0-rc.0

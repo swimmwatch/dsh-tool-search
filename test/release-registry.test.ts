@@ -20,7 +20,7 @@ await test('publication waits beyond thirty seconds for registry and tag propaga
     if (url.includes(`/${version}?`)) return Response.json(manifest);
     return Response.json({ 'dist-tags': { next: pauses < 5 ? '1.0.0-rc.0' : version } });
   };
-  await waitForPublication(version, digest(bytes), request, async (milliseconds) => {
+  await waitForPublication(version, digest(bytes), undefined, request, async (milliseconds) => {
     assert.equal(milliseconds, 10_000);
     pauses++;
   });
@@ -50,8 +50,28 @@ await test('publication rejects changed bytes and a candidate on latest', async 
     if (url.includes(`/${version}?`)) return Response.json(manifest);
     return Response.json({ 'dist-tags': { next: version, latest: version } });
   };
-  await assert.rejects(waitForPublication(version, digest(bytes), request), /latest/);
-  await assert.rejects(waitForPublication(version, digest(new Uint8Array()), request), /differs/);
+  await assert.rejects(waitForPublication(version, digest(bytes), undefined, request), /latest/);
+  await assert.rejects(
+    waitForPublication(version, digest(new Uint8Array()), undefined, request),
+    /differs/,
+  );
+});
+
+await test('candidate publication preserves the existing bootstrap or stable latest tag', async () => {
+  for (const latest of ['1.0.0-rc.0', '0.9.0']) {
+    const request: typeof fetch = async (input) => {
+      const url = input instanceof Request ? input.url : input.toString();
+      if (url.startsWith(tarball)) return new Response(bytes);
+      if (url.includes(`/${version}?`)) return Response.json(manifest);
+      return Response.json({ 'dist-tags': { next: version, latest } });
+    };
+    await waitForPublication(version, digest(bytes), latest, request);
+    await assert.rejects(waitForPublication(version, digest(bytes), '0.8.0', request), /latest/);
+  }
+});
+
+await test('an already promoted candidate cannot pass by snapshotting its own latest tag', async () => {
+  await assert.rejects(waitForPublication(version, digest(bytes), version), /latest/);
 });
 
 await test('registry polling is bounded and does not retry authentication failures', async () => {
@@ -62,7 +82,7 @@ await test('registry polling is bounded and does not retry authentication failur
     return new Response(null, { status: 404 });
   };
   await assert.rejects(
-    waitForPublication(version, digest(bytes), missing, async () => {
+    waitForPublication(version, digest(bytes), undefined, missing, async () => {
       pauses++;
     }),
     /did not appear/,

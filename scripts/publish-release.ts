@@ -13,7 +13,7 @@ import {
   verifyPrepareRun,
   verifyRelease,
 } from './release-policy.js';
-import { registryArchive, waitForPublication } from './release-registry.js';
+import { registryArchive, registryTags, waitForPublication } from './release-registry.js';
 
 function github(args: string[]): string {
   return execFileSync('gh', args, { encoding: 'utf8', maxBuffer: 10 * 1024 * 1024 });
@@ -120,6 +120,7 @@ try {
       await tagResponse.json(),
     );
   }
+  const previousLatest = (await registryTags())?.['latest'];
   const existing = await registryArchive(metadata.version);
   if (existing) {
     assert.equal(
@@ -142,7 +143,7 @@ try {
       { stdio: 'inherit' },
     );
   }
-  await waitForPublication(metadata.version, metadata.sha256);
+  await waitForPublication(metadata.version, metadata.sha256, previousLatest);
   await createRelease(metadata.version, commit, [
     archive,
     join(directory, 'SHA256SUMS'),

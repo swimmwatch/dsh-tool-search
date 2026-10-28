@@ -49,13 +49,28 @@ export async function registryArchive(
   return new Uint8Array(await archive.arrayBuffer());
 }
 
+export async function registryTags(
+  request: typeof fetch = fetch,
+): Promise<Record<string, string> | undefined> {
+  const document = await registryGet(REGISTRY_URL, request);
+  if (document.status === 404) return undefined;
+  assert.ok(document.ok, `Registry tags request failed: ${document.status}`);
+  return z.object({ 'dist-tags': z.record(z.string(), z.string()) }).parse(await document.json())[
+    'dist-tags'
+  ];
+}
+
 export async function waitForPublication(
   version: string,
   expectedDigest: string,
+  previousLatest: string | undefined,
   request: typeof fetch = fetch,
   pause: (milliseconds: number) => Promise<void> = setTimeout,
 ): Promise<void> {
   const channel = releaseChannel(version);
+  if (channel === 'next') {
+    assert.notEqual(previousLatest, version, 'The candidate must not already be npm latest');
+  }
   for (let attempt = 0; attempt < POLL_ATTEMPTS; attempt++) {
     const archive = await registryArchive(version, request);
     if (archive) {
@@ -64,16 +79,15 @@ export async function waitForPublication(
         expectedDigest,
         'Published npm archive differs from the tested artifact',
       );
-      const document = await registryGet(REGISTRY_URL, request);
-      if (document.status !== 404) {
-        assert.ok(document.ok, `Registry tags request failed: ${document.status}`);
-        const tags = z
-          .object({ 'dist-tags': z.record(z.string(), z.string()) })
-          .parse(await document.json())['dist-tags'];
+      const tags = await registryTags(request);
+      if (tags) {
         if (channel === 'next') {
-          assert.ok(
-            !tags['latest']?.includes('-'),
-            'A prerelease must not be assigned to npm latest',
+          // npm assigns latest on first publication even with --tag next and
+          // rejects deleting it. Later candidates must preserve that snapshot.
+          assert.equal(
+            tags['latest'],
+            previousLatest,
+            'Candidate publication must not change npm latest',
           );
         }
         if (tags[channel] === version) return;

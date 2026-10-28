@@ -45,6 +45,14 @@ publish allowed. The first OIDC publication must occur within npm's validation
 window. Never put an npm token in source, logs or chat. Later releases use OIDC;
 no permanent npm publishing token is stored in GitHub.
 
+npm assigns `latest` on the first publication even with `--tag next`, and the
+registry rejects deleting it (see [npm/cli#8490](https://github.com/npm/cli/issues/8490)).
+During bootstrap, `latest` therefore temporarily refers to rc.0. Later candidate
+publications must preserve the pre-publication `latest` snapshot and publish only
+to `next`; a candidate already assigned to `latest` is rejected. The accepted
+stable release moves `latest` to 1.0.0. Never publish a placeholder stable version
+or relax archive, source, benchmark or security verification to change this tag.
+
 ## Publish
 
 Run **Release** from `main` with `mode=publish` and the successful Prepare run ID.
@@ -60,7 +68,7 @@ an existing GitHub Release is checked, never silently overwritten. A partial
 failure is still a failure and must be resolved before advancing.
 
 For bootstrap `rc.0`, the same Publish path verifies the manually published
-archive and completes GitHub metadata. Publish `rc.1` through OIDC to prove CD.
+archive and completes GitHub metadata. Publish the next candidate through OIDC to prove CD.
 
 ## Candidate acceptance and stable release
 
