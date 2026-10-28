@@ -1,7 +1,7 @@
 {
   "name": "@swimmwatch/dsh-tool-search",
   "icon": "assets/logo.png",
-  "version": "0.1.0",
+  "version": "1.0.0-rc.0",
   "description": "Native tool search for DeepSeek Harness: discover built-in, plugin and MCP tools with BM25 or optional semantic embeddings.",
   "type": "module",
   "main": "./dist/src/index.js",

@@ -9,8 +9,8 @@ and a community-market submission. Node 24 and DSH 0.2.1-rc.2 stay supported.
 - [x] Generate an original DSH-style Tool Search logo; add it to README and plugin metadata, and verify light/dark presentation.
 - [x] Match the settings page to native DSH styles using its public UI SDK and theme tokens; move plugin styles into separate files and verify light/dark themes.
 - [x] Improve repository discoverability with an accurate GitHub description, topics, npm keywords, README search terms and project links; verify the public metadata.
-- [ ] Merge a separate CI/CD and publication-preparation PR after required checks.
-- [ ] Verify branch protection with a failing-check and invalid-title PR.
+- [x] Merge a separate CI/CD and publication-preparation PR after required checks.
+- [x] Verify branch protection with a failing-check and invalid-title PR.
 - [ ] Prepare rc.0; owner completes npm sign-in/2FA; publish the tested archive.
 - [ ] Configure OIDC and release rc.1 through CD.
 - [ ] Verify registry installation, browser behavior and available live providers.
