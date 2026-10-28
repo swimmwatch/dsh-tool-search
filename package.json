@@ -1,8 +1,8 @@
 {
-  "name": "dsh-tool-search",
+  "name": "@swimmwatch/dsh-tool-search",
+  "icon": "assets/logo.png",
   "version": "0.1.0",
-  "private": true,
-  "description": "Native on-demand discovery of DSH, plugin and MCP tools.",
+  "description": "Native tool search for DeepSeek Harness: discover built-in, plugin and MCP tools with BM25 or optional semantic embeddings.",
   "type": "module",
   "main": "./dist/src/index.js",
   "exports": {
@@ -18,6 +18,8 @@
     }
   },
   "files": [
+    "assets/logo.png",
+    "dist/src/client/settings.css",
     "dist/src/**/*.js",
     "dist/src/**/*.d.ts",
     "cordis.patch.yml",
@@ -63,7 +65,11 @@
     "benchmark:quality": "tsx benchmarks/retrieval/quality-benchmark.ts --mode=hybrid --embedding=ollama",
     "benchmark:metamorphic": "tsx benchmarks/retrieval/metamorphic-benchmark.ts",
     "benchmark:scale": "tsx benchmarks/performance/scale-benchmark.ts",
-    "benchmark:native": "tsx benchmarks/native/native-benchmark.ts"
+    "benchmark:native": "tsx benchmarks/native/native-benchmark.ts",
+    "policy:check": "tsx scripts/check-policy.ts",
+    "package:smoke": "tsx scripts/smoke-package.ts",
+    "release:prepare": "tsx scripts/prepare-release.ts",
+    "release:publish": "tsx scripts/publish-release.ts"
   },
   "dependencies": {
     "@deepseek-ai/schemastery": "3.18.5",
@@ -75,7 +81,7 @@
     "@deepseek-ai/dsh-home-paths": "0.2.1-rc.2",
     "@deepseek-ai/dsh-tools": "0.2.1-rc.2"
   },
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@deepseek-ai/cordis": "^4.0.5",
     "@deepseek-ai/dsh-api-gateway": "0.2.1-rc.2",
@@ -133,7 +139,39 @@
     "tsx": "^4.23.13",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
     "typescript-eslint": "^8.69.0",
-    "zustand": "4.5.7"
+    "zustand": "4.5.7",
+    "@commitlint/cli": "21.2.4",
+    "@commitlint/config-conventional": "21.2.4",
+    "semver": "7.8.4",
+    "@types/semver": "7.7.1"
   },
-  "types": "./dist/src/index.d.ts"
+  "types": "./dist/src/index.d.ts",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swimmwatch/dsh-tool-search.git"
+  },
+  "bugs": {
+    "url": "https://github.com/swimmwatch/dsh-tool-search/issues"
+  },
+  "homepage": "https://github.com/swimmwatch/dsh-tool-search#readme",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "tool-search",
+    "mcp",
+    "ai-agents",
+    "context-management",
+    "semantic-search",
+    "bm25",
+    "ollama",
+    "openai",
+    "typescript"
+  ],
+  "overrides": {
+    "zod": "$zod"
+  }
 }

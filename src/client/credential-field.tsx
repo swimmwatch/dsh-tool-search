@@ -61,7 +61,7 @@ export function CredentialField({
     }
   }
   return (
-    <fieldset disabled={disabled || saving || !status?.writable}>
+    <fieldset className="credential" disabled={disabled || saving || !status?.writable}>
       <SettingsSecretField
         id="dsh-tool-search-api-key"
         label={SETTINGS_TEXT.apiKey}
@@ -87,7 +87,11 @@ export function CredentialField({
       >
         {SETTINGS_TEXT.keySave}
       </Button>
-      {failed && <p role="alert">{SETTINGS_TEXT.keyFailed}</p>}
+      {failed && (
+        <p role="alert" className="error">
+          {SETTINGS_TEXT.keyFailed}
+        </p>
+      )}
     </fieldset>
   );
 }

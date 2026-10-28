@@ -2,19 +2,26 @@ import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { createRequire } from 'node:module';
-import { join } from 'node:path';
+import { join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { runInNewContext } from 'node:vm';
 import { z } from 'zod';
+import { PACKAGE_NAME, PLUGIN_NAME } from '../src/constants.js';
+import { releaseVersion } from './release-policy.js';
 
 const projectRoot = fileURLToPath(new URL('..', import.meta.url));
-const packageName = 'dsh-tool-search';
+const packageName = PACKAGE_NAME;
+const expectedManifest = z
+  .object({ version: z.string() })
+  .parse(JSON.parse(await readFile(join(projectRoot, 'package.json'), 'utf8')));
 const packSchema = z
   .array(z.object({ filename: z.string(), files: z.array(z.object({ path: z.string() })) }))
   .length(1);
 const manifestSchema = z.object({
   name: z.literal(packageName),
-  version: z.literal('0.1.0'),
+  version: z.literal(releaseVersion(expectedManifest.version)),
+  license: z.literal('Apache-2.0'),
+  icon: z.literal('assets/logo.png'),
   main: z.string(),
   types: z.string(),
   engines: z.object({ node: z.literal('>=24 <25'), dsh: z.literal('0.2.1-rc.2') }),
@@ -38,11 +45,13 @@ function verifyFiles(files: readonly string[]): void {
     'dist/src/index.d.ts',
     'dist/src/config.js',
     'dist/client.js',
+    'dist/src/client/settings.css',
     'dist/src/client/index.d.ts',
     'dist/src/core/mcp/tool-search-controller.js',
     'cordis.patch.yml',
     'NOTICE',
     'LICENSE',
+    'assets/logo.png',
   ]) {
     assert.ok(files.includes(required), `Missing package file: ${required}`);
   }
@@ -92,7 +101,7 @@ async function verifyEntrypoints(require: NodeJS.Require, installedRoot: string)
   const plugin: unknown = await import(pathToFileURL(entry).href);
   const hostPlugin = z
     .object({
-      name: z.literal(packageName),
+      name: z.literal(PLUGIN_NAME),
       inject: z.array(z.string()),
       apply: z.custom<(ctx: unknown) => unknown>((value) => typeof value === 'function'),
     })
@@ -130,32 +139,43 @@ async function verifyEntrypoints(require: NodeJS.Require, installedRoot: string)
     })
     .parse(registration.factory(require));
   assert.deepEqual(browserPlugin.inject, ['slots', 'remote.credentials']);
+  let registeredKey: string | undefined;
+  browserPlugin.apply({
+    remote: { credentials: {} },
+    effect: (callback: () => void) => callback(),
+    slots: {
+      inject: (_slot: string, callback: () => void) => callback(),
+      register: (descriptor: { key: string }) => {
+        registeredKey = descriptor.key;
+      },
+    },
+  });
+  assert.equal(
+    registeredKey,
+    `${packageName}#${PLUGIN_NAME}`,
+    'Settings must target the scoped bundle and preserved row',
+  );
 }
 
 await mkdir(join(projectRoot, '.local'), { recursive: true });
 const temporaryRoot = await mkdtemp(join(projectRoot, '.local/package-verify-'));
 try {
-  const raw = execFileSync(
-    'npm',
-    ['pack', '--ignore-scripts', '--json', '--pack-destination', temporaryRoot],
-    {
-      cwd: projectRoot,
-      encoding: 'utf8',
-    },
-  );
-  const [packed] = packSchema.parse(JSON.parse(raw));
-  assert.ok(packed);
-  const files = packed.files.map((file) => file.path);
+  const provided = process.argv[2];
+  const archive = provided ? resolve(provided) : packRuntime();
+  const files = execFileSync('tar', ['-tzf', archive], { encoding: 'utf8' })
+    .trim()
+    .split('\n')
+    .map((path) => {
+      assert.ok(
+        path.startsWith('package/') && !path.split('/').includes('..'),
+        'Invalid archive member',
+      );
+      return path.slice('package/'.length);
+    });
   verifyFiles(files);
   const installedRoot = join(temporaryRoot, 'node_modules', packageName);
   await mkdir(installedRoot, { recursive: true });
-  execFileSync('tar', [
-    '-xzf',
-    join(temporaryRoot, packed.filename),
-    '-C',
-    installedRoot,
-    '--strip-components=1',
-  ]);
+  execFileSync('tar', ['-xzf', archive, '-C', installedRoot, '--strip-components=1']);
   for (const path of files.filter((file) => file.endsWith('.js'))) {
     const source = await readFile(join(installedRoot, path), 'utf8');
     assert.ok(
@@ -171,6 +191,9 @@ try {
   const require = createRequire(join(temporaryRoot, 'consumer.cjs'));
   const manifestPath = require.resolve(`${packageName}/package.json`);
   const manifest = manifestSchema.parse(JSON.parse(await readFile(manifestPath, 'utf8')));
+  const icon = await readFile(join(installedRoot, manifest.icon));
+  assert.ok(icon.byteLength <= 256 * 1024, 'Icon exceeds the DSH manifest limit');
+  assert.equal(icon.subarray(0, 8).toString('hex'), '89504e470d0a1a0a', 'Icon must be PNG');
   verifyManifest(manifest, files);
   assert.equal(
     require.resolve(`${packageName}/cordis.patch.yml`),
@@ -180,4 +203,15 @@ try {
   process.stdout.write(`Packed artifact verified: ${files.length} runtime files.\n`);
 } finally {
   await rm(temporaryRoot, { recursive: true, force: true });
+}
+
+function packRuntime(): string {
+  const raw = execFileSync(
+    'npm',
+    ['pack', '--ignore-scripts', '--json', '--pack-destination', temporaryRoot],
+    { cwd: projectRoot, encoding: 'utf8' },
+  );
+  const [packed] = packSchema.parse(JSON.parse(raw));
+  assert.ok(packed);
+  return join(temporaryRoot, packed.filename);
 }

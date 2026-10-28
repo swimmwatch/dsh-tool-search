@@ -31,6 +31,13 @@ Higher-priority instructions and the user's explicit scope take precedence.
 - Do not add dependencies, change versions/licenses, update installed DSH, restart services, or alter packaging targets unless the task authorizes that work. Generate `dist/` through the build; do not edit it by hand.
 - Preserve unrelated dirty work. Do not commit, push, publish, or contact external parties without authorization.
 
+## Releases And Contribution History
+
+- Use Semantic Versioning 2.0.0 for releases: MAJOR for breaking public-contract changes, MINOR for compatible features, PATCH for compatible fixes. Release candidates use `MAJOR.MINOR.PATCH-rc.N`; published versions and tags are immutable.
+- Use Keep a Changelog 1.1.0: maintain `[Unreleased]`, dated version sections, comparison links, and the Added, Changed, Deprecated, Removed, Fixed, and Security categories. Write user-facing changes, not a raw Git log.
+- Use Semantic Commits in Conventional Commits 1.0.0 format for commits and PR titles: `type(scope): description`. Mark breaking changes with `!` or a `BREAKING CHANGE` footer. Squash merges must retain a compliant title.
+- Follow [the release procedure](docs/releases.md). Every change after repository bootstrap goes through a PR and required checks. Never bypass failed checks, weaken benchmark gates, overwrite a published version, or rebuild a prepared archive during publication.
+
 ## State And Handoffs
 
 - Use the workflow and authoritative task store selected for the task. Do not create parallel local state for MCP-managed workflows or edit their state files by hand.

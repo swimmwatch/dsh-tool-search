@@ -1,0 +1,93 @@
+.dsh-tool-search-settings {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  color: var(--dsw-alias-label-primary);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.dsh-tool-search-settings .section {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 24px;
+}
+
+.dsh-tool-search-settings .toggle {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: 500;
+}
+
+.dsh-tool-search-settings .provider,
+.dsh-tool-search-settings .credential {
+  display: grid;
+  gap: 12px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.dsh-tool-search-settings .provider > legend {
+  padding: 0 0 8px;
+  font-weight: 500;
+}
+
+.dsh-tool-search-settings .fields {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+
+.dsh-tool-search-settings .field {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.dsh-tool-search-settings .help,
+.dsh-tool-search-settings small {
+  display: block;
+  margin: 0;
+  color: var(--dsw-alias-label-tertiary);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.dsh-tool-search-settings .tools-label {
+  font-weight: 500;
+}
+
+.dsh-tool-search-settings .tool-list {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 180px;
+  padding: 12px;
+  border: 0.5px solid var(--dsw-alias-border-l4);
+  border-radius: var(--dsw-radius-md);
+  font: 12px/1.6 monospace;
+  color: var(--dsw-alias-label-primary);
+  background: var(--dsw-alias-bg-layer-1);
+  resize: vertical;
+}
+
+.dsh-tool-search-settings .tool-list:focus-visible {
+  outline: var(--dsw-focus-ring-width) solid var(--dsw-focus-ring-color);
+  outline-offset: 2px;
+}
+
+.dsh-tool-search-settings .actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dsh-tool-search-settings .error {
+  margin: 0;
+  color: var(--dsw-alias-label-error);
+}

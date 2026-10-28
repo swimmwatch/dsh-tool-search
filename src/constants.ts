@@ -10,6 +10,7 @@ export {
   SEARCH_MODES,
 } from './core/shared/types.js';
 
+export const PACKAGE_NAME = '@swimmwatch/dsh-tool-search';
 export const PLUGIN_NAME = 'dsh-tool-search';
 export const TOOL_NAMES = Object.freeze({ search: 'tool_search', unload: 'tool_unload' });
 export const DISCOVERY_TOOLS: ReadonlySet<string> = new Set(Object.values(TOOL_NAMES));

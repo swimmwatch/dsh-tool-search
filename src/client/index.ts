@@ -5,13 +5,23 @@ import type { CredentialActions } from './credential-field.js';
 import type { Context } from '@deepseek-ai/cordis';
 import type {} from '@deepseek-ai/dsh-client-ui-slots';
 import type {} from '@deepseek-ai/dsh-client-ui-renderer/client';
-import { PLUGIN_NAME } from '../constants.js';
+import { PACKAGE_NAME, PLUGIN_NAME } from '../constants.js';
 import { SETTINGS_TEXT } from './messages.js';
 import { ToolSearchSettings } from './settings.js';
+import settingsCss from './settings.css';
 
 export const inject = ['slots', 'remote.credentials'];
 
 export function apply(ctx: Context): void {
+  if (typeof document !== 'undefined') {
+    ctx.effect(() => {
+      const style = document.createElement('style');
+      style.dataset.plugin = PACKAGE_NAME;
+      style.textContent = settingsCss;
+      document.head.appendChild(style);
+      return () => style.remove();
+    });
+  }
   const credentials: CredentialActions = {
     describe: async (ref) => {
       const response = await ctx.remote.credentials.describe([ref]);
@@ -28,7 +38,7 @@ export function apply(ctx: Context): void {
   ctx.effect(() =>
     ctx.slots.inject('plugins.row.config', () =>
       ctx.slots.register(
-        { name: 'plugins.row.config', key: `${PLUGIN_NAME}#${PLUGIN_NAME}` },
+        { name: 'plugins.row.config', key: `${PACKAGE_NAME}#${PLUGIN_NAME}` },
         Settings,
       ),
     ),

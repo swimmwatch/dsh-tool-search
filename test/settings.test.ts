@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { availableToolNames, Config } from '../src/config.js';
+import { availableToolNames, Config, configuredEmbeddings } from '../src/config.js';
 import { BASE_TOOLS, EMBEDDING } from '../src/constants.js';
 import {
   embeddingModelText,
@@ -25,7 +25,7 @@ await test('provider defaults preserve Ollama and validate remote configuration'
   assert.equal(defaults.openaiEmbeddingModel.get(), OPENAI_DEFAULTS.model);
   assert.equal(defaults.openaiApiKeyRef.get(), OPENAI_DEFAULTS.apiKeyRef);
   assert.equal(
-    Config({ openaiBaseUrl: 'https://EXAMPLE.com/v1/' }).openaiBaseUrl.get(),
+    configuredEmbeddings(Config({ openaiBaseUrl: 'https://EXAMPLE.com/v1/' })).openaiBaseUrl,
     'https://example.com/v1',
   );
   for (const openaiBaseUrl of [

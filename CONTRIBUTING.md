@@ -105,37 +105,23 @@ changes. Keep generated results under ignored `benchmarks/results/`, `.local/`
 or the task's external artifact directory. Release publication and changes to the
 installed DSH profile require explicit user authorization.
 
-## Before public publication
+## Pull requests and releases
 
-The GitHub issue forms separate bugs, retrieval quality, feature requests and
-usage questions. Include a commit or package hash as well as the version when
-reporting a local build. Follow [SUPPORT.md](SUPPORT.md) for redaction and
-[SECURITY.md](SECURITY.md) for private vulnerability reports. Participation is
-covered by [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+Use Conventional Commits 1.0.0 for commit messages and PR titles. The required
+policy check validates the PR title; squash merge uses that title for the final
+commit. Describe breaking changes with `!` or `BREAKING CHANGE`.
 
-Use the pull-request template to explain the problem, resulting behavior and
-applicable verification. Mark unrelated checks as not applicable with a reason;
-do not claim browser or live-provider acceptance from offline tests. Update
-[CHANGELOG.md](CHANGELOG.md) for accepted user-visible changes without inventing
-release tags or dates.
+Keep CHANGELOG.md in Keep a Changelog 1.1.0 format. Add accepted changes to
+`[Unreleased]`; a release PR moves them into a dated SemVer section. The stable
+public contract is documented in [docs/public-contract.md](docs/public-contract.md).
 
-The GitHub workflow runs the locked install, `check`, `package:verify` and the
-offline `benchmark` on Ubuntu/Node 24, without provider keys or a running DSH.
-For workflow changes, run `actionlint` when available and inspect triggers,
-permissions and pinned action revisions. YAML parsing alone is not a hosted CI run.
+All changes require a PR and the `Required checks` status. CI runs quality,
+package installation, all seven deterministic benchmark suites, workflow and
+commit policy, secret scanning, dependency auditing and CodeQL. High/Critical
+security findings block merging. Never bypass a failed gate. Live providers and
+browser acceptance are separately reported, not implied by offline CI.
 
-Repository-level setup and dependency-update limits are documented in
-[REPOSITORY_SETUP.md](.github/REPOSITORY_SETUP.md). These files do not enable
-branch protection or private reporting automatically.
-
-1. The owner must choose a redistribution license covering both this plugin and
-   the reused private source. The current `UNLICENSED` package and all-rights-
-   reserved license do not grant public redistribution permission.
-2. Run the regression suite with `npm test`, including the discovery-name and
-   retrieval-ranking tests.
-3. Run checks and review the actual Git candidate list. Review benchmark results
-   against the declared gate; a no-regression result is not an absolute quality
-   certificate.
-4. Create the intended GitHub repository and add its verified URL only when
-   publication is explicitly authorized. This extracted project has no remote
-   or release configured.
+The project and incorporated author-owned code use Apache-2.0. Preserve NOTICE
+and provenance. Follow [docs/releases.md](docs/releases.md) for candidate and
+stable publication. See [.github/REPOSITORY_SETUP.md](.github/REPOSITORY_SETUP.md)
+for the repository's protection and security settings.

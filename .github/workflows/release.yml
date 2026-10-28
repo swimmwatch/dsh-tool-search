@@ -1,0 +1,76 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        type: choice
+        description: Prepare a tested archive or publish an existing prepare artifact
+        required: true
+        options: [prepare, publish]
+      prepare_run_id:
+        type: string
+        description: Successful prepare run ID (publish only)
+        required: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  checks:
+    if: github.ref == 'refs/heads/main' && inputs.mode == 'prepare'
+    uses: ./.github/workflows/ci.yml
+    permissions:
+      contents: read
+      security-events: write
+
+  prepare:
+    if: github.ref == 'refs/heads/main' && inputs.mode == 'prepare'
+    needs: checks
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npx --no-install tsx scripts/build-ui-test-runtime.ts
+      - run: npm run release:prepare
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: release-${{ github.run_id }}
+          path: artifacts/release/
+          if-no-files-found: error
+          retention-days: 30
+
+  publish:
+    if: github.ref == 'refs/heads/main' && inputs.mode == 'publish'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    environment: npm-release
+    permissions:
+      contents: write
+      actions: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          registry-url: https://registry.npmjs.org
+      - run: npm ci --ignore-scripts
+      - run: npm run release:publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PREPARE_RUN_ID: ${{ inputs.prepare_run_id }}

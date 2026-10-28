@@ -8,6 +8,7 @@ import {
   type EmbeddingSettings,
   normalizeOpenAIBaseUrl,
   OLLAMA_MODEL_NAME_PATTERN,
+  OPENAI_BASE_URL_PATTERN,
   OPENAI_DEFAULTS,
   OPENAI_MODEL_PATTERN,
 } from './embedding-settings.js';
@@ -40,7 +41,8 @@ export const Config = z.object({
     .default(OPENAI_DEFAULTS.model)
     .volatile(),
   openaiBaseUrl: z
-    .transform(z.string(), normalizeOpenAIBaseUrl)
+    .string()
+    .pattern(OPENAI_BASE_URL_PATTERN)
     .default(OPENAI_DEFAULTS.baseUrl)
     .volatile(),
   openaiApiKeyRef: z
@@ -68,7 +70,7 @@ export function configuredEmbeddings(config: Config): EmbeddingSettings {
     embeddingProvider: config.embeddingProvider.get(),
     embeddingModel: config.embeddingModel.get(),
     openaiEmbeddingModel: config.openaiEmbeddingModel.get(),
-    openaiBaseUrl: config.openaiBaseUrl.get(),
+    openaiBaseUrl: normalizeOpenAIBaseUrl(config.openaiBaseUrl.get()),
     openaiApiKeyRef: config.openaiApiKeyRef.get(),
   };
 }
