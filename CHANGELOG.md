@@ -6,6 +6,10 @@ and releases follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+- Wait for npm archive and channel propagation during publication, and reject release candidates assigned to `latest`.
+
 ## [1.0.0-rc.0] - 2026-10-28
 
 ### Added

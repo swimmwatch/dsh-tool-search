@@ -3,7 +3,6 @@ import { execFileSync } from 'node:child_process';
 import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { setTimeout } from 'node:timers/promises';
 import { z } from 'zod';
 import { PACKAGE_NAME } from '../src/constants.js';
 import {
@@ -14,6 +13,7 @@ import {
   verifyPrepareRun,
   verifyRelease,
 } from './release-policy.js';
+import { registryArchive, waitForPublication } from './release-registry.js';
 
 function github(args: string[]): string {
   return execFileSync('gh', args, { encoding: 'utf8', maxBuffer: 10 * 1024 * 1024 });
@@ -31,37 +31,6 @@ const main = z
 assert.equal(main.sha, commit, 'Publish must use the current reviewed main commit');
 verifyPrepareRun(JSON.parse(github(['api', `repos/${REPOSITORY}/actions/runs/${runId}`])), commit);
 const directory = await mkdtemp(join(tmpdir(), 'dsh-release-publish-'));
-const registryUrl = `https://registry.npmjs.org/${encodeURIComponent(PACKAGE_NAME)}`;
-
-async function registryArchive(version: string): Promise<Uint8Array | undefined> {
-  const response = await fetch(`${registryUrl}/${version}`, {
-    signal: AbortSignal.timeout(30_000),
-  });
-  if (response.status === 404) return undefined;
-  assert.ok(response.ok, `Registry metadata request failed: ${response.status}`);
-  const manifest = z
-    .object({
-      name: z.literal(PACKAGE_NAME),
-      version: z.literal(version),
-      dist: z.object({ tarball: z.url() }),
-    })
-    .parse(await response.json());
-  const url = new URL(manifest.dist.tarball);
-  assert.equal(url.origin, 'https://registry.npmjs.org');
-  const archive = await fetch(url, { redirect: 'error', signal: AbortSignal.timeout(30_000) });
-  assert.ok(archive.ok, `Registry archive request failed: ${archive.status}`);
-  return new Uint8Array(await archive.arrayBuffer());
-}
-
-async function waitForArchive(version: string): Promise<Uint8Array> {
-  for (let attempt = 0; attempt < 6; attempt++) {
-    const archive = await registryArchive(version);
-    if (archive) return archive;
-    await setTimeout(5_000);
-  }
-  throw new Error('Published archive did not appear in the registry');
-}
-
 async function createRelease(version: string, sha: string, paths: string[]): Promise<void> {
   const tag = `v${version}`;
   const response = await fetch(`https://api.github.com/repos/${REPOSITORY}/releases/tags/${tag}`, {
@@ -173,22 +142,7 @@ try {
       { stdio: 'inherit' },
     );
   }
-  assert.equal(
-    digest(await waitForArchive(metadata.version)),
-    metadata.sha256,
-    'Published npm archive differs from the tested artifact',
-  );
-  // The registry exposes tag metadata on the package document.
-  const document = await fetch(registryUrl, { signal: AbortSignal.timeout(30_000) });
-  assert.ok(document.ok, `Registry tags request failed: ${document.status}`);
-  const tags = z
-    .object({ 'dist-tags': z.record(z.string(), z.string()) })
-    .parse(await document.json());
-  assert.equal(
-    tags['dist-tags'][releaseChannel(metadata.version)],
-    metadata.version,
-    'The npm release channel must point to this version',
-  );
+  await waitForPublication(metadata.version, metadata.sha256);
   await createRelease(metadata.version, commit, [
     archive,
     join(directory, 'SHA256SUMS'),
