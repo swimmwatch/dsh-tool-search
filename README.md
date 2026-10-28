@@ -35,7 +35,7 @@ The npm package is **`@swimmwatch/dsh-tool-search`**. The unscoped
 
 ## Install
 
-Once a stable release is published:
+Install the stable release into your DSH profile:
 
 ```sh
 dsh plugin --profile web add @swimmwatch/dsh-tool-search@latest
