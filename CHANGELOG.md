@@ -6,6 +6,8 @@ and releases follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.0.0-rc.0] - 2026-10-28
+
 ### Added
 
 - Native `tool_search` and `tool_unload` for built-in, plugin and MCP tools.
@@ -34,4 +36,5 @@ and releases follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Pin the project dependency tree to Zod 4.6.6 to remove the vulnerable SDK
   dependency copies. This does not patch a separately installed DSH host.
 
-[Unreleased]: https://github.com/swimmwatch/dsh-tool-search/compare/main...HEAD
+[Unreleased]: https://github.com/swimmwatch/dsh-tool-search/compare/v1.0.0-rc.0...HEAD
+[1.0.0-rc.0]: https://github.com/swimmwatch/dsh-tool-search/releases/tag/v1.0.0-rc.0
