@@ -33,7 +33,7 @@ assert.ok(changelog.includes('https://keepachangelog.com/en/1.1.0/'));
 assert.ok(changelog.includes(`https://github.com/${REPOSITORY}/compare/`));
 const message =
   process.env['PR_TITLE'] ||
-  execFileSync('git', ['log', '-1', '--format=%B'], { encoding: 'utf8' });
+  execFileSync('git', ['log', '-1', '--format=%s'], { encoding: 'utf8' });
 execFileSync('node', ['node_modules/@commitlint/cli/cli.js'], {
   input: message,
   stdio: ['pipe', 'inherit', 'inherit'],
