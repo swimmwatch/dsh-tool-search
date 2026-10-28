@@ -12,9 +12,9 @@ and a community-market submission. Node 24 and DSH 0.2.1-rc.2 stay supported.
 - [x] Merge a separate CI/CD and publication-preparation PR after required checks.
 - [x] Verify branch protection with a failing-check and invalid-title PR.
 - [x] Prepare rc.0; owner completes npm sign-in/2FA; publish the tested archive.
-- [ ] Configure OIDC and release rc.1 through CD.
-- [ ] Verify registry installation, browser behavior and available live providers.
-- [ ] Repair failed candidates through separate PRs and new RC versions.
+- [x] Configure OIDC and release rc.2 through CD (rc.1 was not published).
+- [x] Verify registry installation, browser behavior and available live providers.
+- [x] Repair publication issues through separate PRs and new RC versions.
 - [ ] Prepare/publish stable 1.0.0 and verify registry/release artifact identity.
 - [ ] Back up and migrate the working web profile; verify or roll back.
 - [ ] Submit the Marketplace entry and report its external review status.
