@@ -12,10 +12,6 @@ and releases follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 - Preserve the existing npm `latest` tag when publishing candidates, including the registry-assigned bootstrap tag; reject unexpected promotion or channel changes.
 
-## [1.0.0-rc.1] - 2026-10-28
-
-### Fixed
-
 - Wait for npm archive and channel propagation during publication, and reject release candidates assigned to `latest`.
 
 ## [1.0.0-rc.0] - 2026-10-28
@@ -50,5 +46,4 @@ and releases follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 [Unreleased]: https://github.com/swimmwatch/dsh-tool-search/compare/v1.0.0-rc.2...HEAD
 [1.0.0-rc.2]: https://github.com/swimmwatch/dsh-tool-search/compare/v1.0.0-rc.0...v1.0.0-rc.2
-[1.0.0-rc.1]: https://github.com/swimmwatch/dsh-tool-search/compare/v1.0.0-rc.0...v1.0.0-rc.1
 [1.0.0-rc.0]: https://github.com/swimmwatch/dsh-tool-search/releases/tag/v1.0.0-rc.0
